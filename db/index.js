@@ -32,7 +32,7 @@ class DB {
         })
     }
     static addDept() {
-        connection.query("SELECT * FROM dept", (error, results) => {
+        connection.query("INSERT INTO dept", (error, results) => {
             if (error) {
                 console.error(error)
                 return
@@ -52,7 +52,7 @@ class DB {
         })
     }
     static addRole() {
-        connection.query("SELECT * FROM role", (error, results) => {
+        connection.query("INSERT INTO role", (error, results) => {
             if (error) {
                 console.error(error)
                 return
@@ -62,7 +62,7 @@ class DB {
         })
     }
     static addEmp() {
-        connection.query("SELECT * FROM role", (error, results) => {
+        connection.query("INSERT INTO emp", (error, results) => {
             if (error) {
                 console.error(error)
                 return
@@ -82,32 +82,5 @@ class DB {
     //     })
     // }
 }
-
-if(choice === choices.EXIT) {
-    return
-} 
-if(choice === choices.VIEW_DEPTS){
-    DB.getDepts();
-}
-if(choice === choices.VIEW_ROLES){
-    DB.getRoles();
-}
-if(choice === choices.VIEW_EMPS){
-    DB.getEmps();
-}
-if(choice === choices.ADD_DEPT){
-    DB.addDept();
-}
-if(choice === choices.VIEW_ROLES){
-    DB.viewRoles();
-}
-if(choice === choices.ADD_ROLE){
-    DB.addRole();
-}
-if(choice === choices.ADD_EMP){
-    DB.addEmp();
-}
-if(choice === choices.UPDATE_EMP_ROLE){
-    DB.updateEmpRole();
 
 module.exports = DB;
